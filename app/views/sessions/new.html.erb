@@ -1,0 +1,18 @@
+<h1>ログイン</h1>
+
+	<%= form_for(:session, url: login_path) do |f| %>
+	  <%= hidden_field_tag 'authenticity_token', form_authenticity_token %> 
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Log in", class: "btn btn-lg btn-primary" %>
+      </div>
+    <% end %>
+    <br><br><br><br>
+    <p>New user? <%= link_to "Sign up now!", users_new_path,class: "btn btn-lg btn-primary" %></p>

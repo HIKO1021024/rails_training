@@ -1,0 +1,9 @@
+development:
+  adapter: async
+ 
+test:
+  adapter: async
+ 
+production:
+  adapter: redis
+  url: redis://ide.c9.io/masamasa1021024/rails-training:6379
