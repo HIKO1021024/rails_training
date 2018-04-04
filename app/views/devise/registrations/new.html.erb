@@ -25,10 +25,14 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+  <div class="field">
+    <%= f.hidden_field :randomkey, :value => SecureRandom.hex(16) %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  
 <% end %>
 
 <%= render "devise/shared/links" %>

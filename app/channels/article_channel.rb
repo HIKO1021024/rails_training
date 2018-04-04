@@ -8,6 +8,20 @@ class ArticleChannel < ApplicationCable::Channel
   end
 
   def speak(data)
+
+    @user = User.find_by(randomkey:data['message'][0])
+    Rails.logger.debug(@user)
+    if  @user.nil? 
+      data['message'] = "ユーザーは存在しない"
+    else
+      data['message'][0] = @user.name
+      @article = Article.new(content:data['message'][1],user_id:@user.id)
+      @article.save
+    end
+    
+    
+     
     ActionCable.server.broadcast 'article_channel', message: data['message']
+    
   end
 end

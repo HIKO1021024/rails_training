@@ -10,6 +10,7 @@
 </head>
 <body>
 ようこそ！ <%= current_user.name %>さん
+<p hidden id='randomkey'> <%= current_user.randomkey %> </p>
 
 <%= yield %>
 <br>
