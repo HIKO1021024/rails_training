@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$('#submit_chat').on('click', function() {
+  alert('クリックされました');
+});

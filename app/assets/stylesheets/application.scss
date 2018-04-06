@@ -2,73 +2,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* 親メニュー */
-#menu {
-  width: auto;
-}
-#menu > ul {
-  background-color: #123456;
-  position: relative;
-  font-size: 18px;
-}
-#menu > ul li {
-  list-style: none;
-  width: 120px;
-}
-#menu > ul > li {
-  float: left;
-  background-color: #987654;
-  color: white;
-  position: relative;
-  display: block;
-  line-height: 32px;
-  text-align: center;
-  vertical-align: middle;
-}
-#menu > ul > li > a {
-  background-color: #123456;
-  display: block;
-  padding: 7px 30px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  line-height: 18px;
-}
-#menu > ul > li:hover > a {
-  background-color: #bbb;
-}
-#menu > ul > li > a > span {
-  line-height: 18px;
+/* 共通 */
+
+section {
+  overflow: auto;
 }
 
-/* 子メニュー */
-#menu > ul ul {
-  visibility: hidden;
-  position: absolute;
-  width: 120px;
-  background-color: blue;
-  z-index: -1;
+textarea {
+  resize: vertical;
 }
-#menu > ul li:hover ul {
-  opacity: 1;
-  visibility: visible;
-  color: #000;
-  z-index: 2;
-  top: 32px;
-  left: 0;
+
+.center {
+  text-align: center;
 }
-#menu > ul ul li {
-  list-style: none;
-  width: 100%;
+
+.center h1 {
+  margin-bottom: 10px;
 }
-#menu > ul ul li a {
-  padding: 7px 0px 7px 0px;
-  background-color: blue;
+
+.collapse.navbar-collapse.navbar-right{
+  text-align: right;
   display: block;
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-}
-#menu > ul ul li a:hover {
-  background-color: #30308b;
+  padding: 10px 15px;
 }

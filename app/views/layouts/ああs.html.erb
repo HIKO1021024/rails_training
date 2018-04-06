@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
+ <head>
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-   <%= hidden_field_tag 'authenticity_token', form_authenticity_token %> 
+  <%= hidden_field_tag 'authenticity_token', form_authenticity_token %> 
   <%= csrf_meta_tags %>
+
 </head>
-<body>
-</div>  
-  
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
 <% if user_signed_in? %>
 <nav class="navbar navbar-default navbar-fixed-top">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#">メッセージ</a></li>
     <li><a href="#">お知らせ</a></li>
     <div class="collapse navbar-collapse navbar-right" >
-       <%= link_to 'user設定', edit_user_registration_path%>/<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+       <button type="button"<%= link_to 'user設定', edit_user_registration_path%></button> <button type="button"<%= link_to 'Logout', destroy_user_session_path, :method => :delete %></button>
     </div>  
   </ul>
 </nav>
-<br>
 <% end %>
 
-<div class="center jumbotron"">
+<body>
+</div>  
+<br>
+<br>
+<br>
+<div class="center jumbotron" id='menu'>
+</p>
   <%= yield %>
-</div>
-
+  <br>
+</div> 
 </body>
+
 </html>
