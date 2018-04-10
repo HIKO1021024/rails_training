@@ -44,9 +44,9 @@
             
             <ul class="nav navbar-nav navbar-right">
               <% if current_user.image != nil %>
-                <li><%= image_tag current_user.image, :size => '30x30'%></li>
-              <% else %>
                 <li><%= image_tag images/default.png, :size => '30x30'%></li>
+              <% else %>
+              <li><%= image_tag current_user.image, :size => '30x30'%></li>
               <% end %>
               <li><%= link_to 'user設定', edit_user_registration_path%></li>
               <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
