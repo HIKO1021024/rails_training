@@ -24,7 +24,7 @@
               <% if @user.image != nil %>
                 <%= image_tag @user.image, :size => '30x30'%>
               <% else %>
-                <%= image_tag '/assets/default.png', :size => '30x30'%>
+                <img src="/assets/default.png" id="default-img" width="30" height="30">
               <% end %>
               <%= @user.name %>
               </div><%# class="other_people_user %>

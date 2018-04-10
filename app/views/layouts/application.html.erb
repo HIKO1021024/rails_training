@@ -44,7 +44,7 @@
             
             <ul class="nav navbar-nav navbar-right">
               <% if current_user.image == nil %>
-                <li><%= image_tag "/assets/default.png", :size => '30x30'%></li>
+                <li><img src="/assets/default.png" id="default-img" width="30" height="30"></li>
               <% else %>
                 <li><%= image_tag current_user.image, :size => '30x30'%></li>
               <% end %>
