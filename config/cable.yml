@@ -6,4 +6,4 @@ test:
  
 production:
   adapter: redis
-  url: redis://ide.c9.io/masamasa1021024/rails-training:6379
+  url: redis://ENV['default_address']:6379
