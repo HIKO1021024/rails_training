@@ -3,8 +3,6 @@
 
 /* 共通 */
 
-
-
 section {
   overflow: auto;
 }
@@ -49,6 +47,7 @@ background: #87cefa;
     text-align: center;
 }
 
+/* 背景*/
 body {
     padding-top: 70px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+47,a1dbff+100;Blue+3D+%2313 */
@@ -58,6 +57,11 @@ background: -moz-linear-gradient(left, rgba(254,255,255,1) 0%, rgba(210,235,249,
 background: -webkit-linear-gradient(left, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to right, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=1 ); /* IE6-9 */
+}
+
+/* フラッシュを真ん中に*/
+.alert{
+    text-align: center;
 }
 
 /* 発言を吹き出しにする（自分用） */
