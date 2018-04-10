@@ -14,7 +14,8 @@ class ArticleChannel < ApplicationCable::Channel
     if  @user.nil? 
       data['message'] = "ユーザーは存在しない"
     else
-      data['message'][0] = @user.name
+      data['message'][3] = @user.name
+      data['message'][2] = @user.image.url
       @article = Article.new(content:data['message'][1],user_id:@user.id)
       @article.save
     end

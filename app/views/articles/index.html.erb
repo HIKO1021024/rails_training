@@ -1,38 +1,44 @@
-<p id="notice"><%= notice %></p>
-<div class="container">
+<%= stylesheet_link_tag 'articles.scss', :media => "all" %>
+  <div class="welcom_mess">
   ようこそ！ <%= current_user.name %>さん
+  </div>
   <p hidden id='randomkey'> <%= current_user.randomkey %> </p>
-  <table  class="table">
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ユーザー名</td>
-        <td>投稿</td>
-      </tr>
-      <% @articles.each do |article| %>
-        <tr>
-          <% @user = User.find_by(id:article.user_id) %>
-          <% if @user.nil? %>
-            <td>退会したユーザー</td>
-          <% else %>
-            <td><%= @user.name %></td>
-          <% end %>
-          <td><%= article.content %></td>
-          <% if @user == current_user || @user.nil?  %>
-          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+  <div class="article">
+    <% @articles.each do |article| %>
+      <% @user = User.find_by(id:article.user_id) %>
+      <% if @user.id == current_user.id %>
+        <div class="my_talk">
+           <div class="my_talk_show">
+          <%= article.content %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div><%# class="my_talk_show %>
+         </div><%# class="my_talk %>
+      <% else %>
+        <div class="other_people">
+            <div class="other_people_user">
+            <% if @user.nil? %>
+              退会したユーザー
+              <%= article.content %>
+              </div><%# class="other_people_user%>
+            <% else %>
+              <% if @user.image != nil %>
+                <%= image_tag @user.image, :size => '30x30'%>
+              <% else %>
+                <%= image_tag '/assets/default.png', :size => '30x30'%>
+              <% end %>
+              <%= @user.name %>
+              </div><%# class="other_people_user %>
+              <div class="other_people_talk">
+                <%= article.content %>
+              </div><%# class="other_people_talk %>
+            <% end %>
+        </div><%# class="other_people %>
       <% end %>
-    </tbody>
-  </table>
-</div>
-<br>
-<form>
-    <label>発言する: <input type="text" data-behavior="chat_input"></label>
-    <input type="button" value="送信" id="submit_chat">
-</form>
+    <% end %>
+  </div><%# class="article %>
+  
+  <form>
+      <label>発言する: <input type="text" data-behavior="chat_input"></label>
+      <input type="button" value="送信" id="submit_chat">
+  </form>
 

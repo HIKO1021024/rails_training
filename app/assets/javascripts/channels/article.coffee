@@ -3,5 +3,10 @@ speak: (message) ->
     @perform 'speak', message: message
     
 received: (data) -> 
-    $('tbody').append '<tr><td>' + data['message'][0] + '</td><td>' + data['message'][1] + '</td></tr>'
-    $('html,body').animate scrollTop: $('[href="/users/sign_out"]').offset().top
+    userkey = $('#randomkey').text().replace(/ /g,"" )
+    if data['message'][0] == userkey
+        $('.article').append '<div class="my_talk"><div class="my_talk_show">' + data['message'][1] + '</div></div>'
+        $('html,body').animate scrollTop: $('#submit_chat').offset().top
+    else
+        $('.article').append '<div class="other_people"><div class="other_people_user"><img src="'+ data['message'][2] + '" width="30" height="30">' + data['message'][3] + '</div><div class="other_people_talk">' +　data['message'][1] + '</div></div>'
+        $('html,body').animate scrollTop: $('#submit_chat').offset().top

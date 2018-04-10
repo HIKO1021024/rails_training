@@ -1,8 +1,9 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* 共通 */
+
+
 
 section {
   overflow: auto;
@@ -12,6 +13,9 @@ textarea {
   resize: vertical;
 }
 
+input[type="file"] {
+  display: inline;
+}
 .center {
   text-align: center;
 }
@@ -20,8 +24,137 @@ textarea {
   margin-bottom: 10px;
 }
 
-.collapse.navbar-collapse.navbar-right{
+.navbar-right{
   text-align: right;
-  display: block;
-  padding: 10px 15px;
+  display:  inline-block;
+  margin-right: 10px;
+  background: #DDEEFF;
+}
+.navbar-header{
+background: #DDEEFF;
+}
+.navbar {
+background: #DDEEFF;
+}
+
+.active{
+background: #87cefa;
+}
+
+.navbar-default .navbar-nav >li > a:hover{
+    color: #aaa;
+}
+	
+.in{
+    text-align: center;
+}
+
+body {
+    padding-top: 70px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+47,a1dbff+100;Blue+3D+%2313 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,d2ebf9+100;Blue+3D+%2312 */
+background: rgb(254,255,255); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=1 ); /* IE6-9 */
+}
+
+/* 発言を吹き出しにする（自分用） */
+
+.center .article .my_talk {
+	display: table;
+	margin-left: auto;
+}
+.center .article .my_talk_show {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 0.5em 20px 0.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #98fb98;
+ 	border: solid 3px #555;
+ 	box-sizing: border-box;
+ 	border-radius: 10px;
+}
+
+.center .article .my_talk_show:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -24px;
+ 	margin-top: -12px;
+	border: 12px solid transparent;
+	border-left: 12px solid #98fb98;
+ 	z-index: 2;
+}
+
+.center .article .my_talk_show:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -30px;
+ 	margin-top: -14px;
+	border: 14px solid transparent;
+	border-left: 14px solid #555;
+ 	z-index: 1;
+}
+
+.center .article .my_talk_show p {
+	margin: 0;
+	padding: 0;
+}
+
+/* 発言を吹き出しにする（他人用） */
+
+.center .article .other_people_user {
+ 	display: block;
+}
+.center .article .other_people_talk {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 0 0 1.5em 50px;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #FFF;
+ 	border: solid 3px #555;
+ 	box-sizing: border-box;
+ 	border-radius: 10px;
+}
+
+.center .article .other_people_talk:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -24px;
+ 	margin-top: -12px;
+	border: 12px solid transparent;
+	border-right: 12px solid #FFF;
+ 	z-index: 2;
+}
+
+.center .article .other_people_talk:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -30px;
+ 	margin-top: -14px;
+	border: 14px solid transparent;
+	border-right: 14px solid #555;
+ 	z-index: 1;
+}
+
+.center .article .other_people_talk p {
+	margin: 0;
+	padding: 0;
+}
+
+.center .article .other_people {
+	display: table;
 }
