@@ -10,7 +10,6 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
       <% flash.each do |message_type, message| %>
          <% if message_type == "alert" %>
            <%  message_type = "warning" %>
@@ -41,12 +40,11 @@
               <li class="active"><a href="/articles">メッセージ</a></li>
               <li><a href="/infos">お知らせ</a></li>
             </ul>
-            
             <ul class="nav navbar-nav navbar-right">
-              <% if current_user.image == nil %>
-                <li><img src="/assets/default.png" id="default-img" width="30" height="30"></li>
+              <% if current_user.image.blank? %>
+                <li><img src="/assets/default.png" id="user-img" width="30" height="30"></li>
               <% else %>
-                <li><%= image_tag current_user.image, :size => '30x30'%></li>
+                <li><%= image_tag current_user.image, :size => '30x30',:id => "user-img"%></li>
               <% end %>
               <li><%= link_to 'user設定', edit_user_registration_path%></li>
               <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
@@ -58,7 +56,6 @@
       <div class="center">
         <%= yield %>
       </div><%# class=" center jumbotro %>
-    </div><%#class="row %>
   </div><%#class="container %>
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

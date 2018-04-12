@@ -1,5 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "*";
+
+/* ...
+*= require_self
+*= require infos
+*/
 
 /* 共通 */
 
@@ -45,6 +51,13 @@ background: #87cefa;
 	
 .in{
     text-align: center;
+    margin:auto;
+}
+
+#user-img{
+	position: inherit;
+    top: 10px;
+    left: -20px;
 }
 
 /* 背景*/
@@ -116,8 +129,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
 
 .center .article .other_people_user {
  	display: block;
+ 	text-align: left;
 }
 .center .article .other_people_talk {
+	float: left;
  	position: relative;
 	display: inline-block;
  	margin: 0 0 1.5em 50px;
@@ -161,4 +176,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
 
 .center .article .other_people {
 	display: table;
+}
+
+h1 {
+color: #6594e0;/*文字色*/
+border-bottom: dashed 2px #6594e0;
+/*線の種類（点線）2px 線色*/
+}
+
+.info_id {
+    margin: 2em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    background-color: white;
+}
+.info_id .info_title {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.info_id p {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.info_user{
+    border-bottom-color: black;
+    border-bottom: groove;	
 }

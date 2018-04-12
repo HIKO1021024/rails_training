@@ -6,11 +6,11 @@
   <div class="article">
     <% @articles.each do |article| %>
       <% @user = User.find_by(id:article.user_id) %>
-      <% if @user.id == current_user.id %>
+      <% if !@user.blank? and @user.id == current_user.id %>
         <div class="my_talk">
-           <div class="my_talk_show">
-          <%= article.content %>
-          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="my_talk_show">
+            <%= article.content %>
+            <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div><%# class="my_talk_show %>
          </div><%# class="my_talk %>
       <% else %>
@@ -18,10 +18,15 @@
             <div class="other_people_user">
             <% if @user.nil? %>
               退会したユーザー
-              <%= article.content %>
               </div><%# class="other_people_user%>
+              <div class="other_people_talk">
+                <%= article.content %>
+                <% if current_user.admin == "t" %>
+                   <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </div><%# class="other_people_talk %>
             <% else %>
-              <% if @user.image != nil %>
+              <% if !@user.image.blank? %>
                 <%= image_tag @user.image, :size => '30x30'%>
               <% else %>
                 <img src="/assets/default.png" id="default-img" width="30" height="30">
@@ -30,6 +35,9 @@
               </div><%# class="other_people_user %>
               <div class="other_people_talk">
                 <%= article.content %>
+                <% if current_user.admin == "t" %>
+                   <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div><%# class="other_people_talk %>
             <% end %>
         </div><%# class="other_people %>

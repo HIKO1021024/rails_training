@@ -11,7 +11,7 @@ $(document).on 'click', '[id~=submit_chat]', ->
     return
 
 $ ->
-    $('html,body').animate scrollTop: $('[href="/users/sign_out"]').offset().top
+    $('html,body').animate scrollTop: $('#submit_chat').offset().top
 
 $(document).on 'keypress', '[data-behavior~=chat_input]', (event) ->
 　　  if event.keyCode is 13 # return = send
