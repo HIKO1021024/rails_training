@@ -5,5 +5,4 @@ test:
   adapter: async
  
 production:
-  adapter: redis
-  url: redis://ENV['default_address']:6379
+  adapter: async
