@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+
+
 skip_before_filter :verify_authenticity_token, only: [:create, :destroy]
 # before_action :authenticate_user!
 
   # GET /users
   # GET /users.json
   def index
+    user_admin?
     @users = User.all
   end
 
